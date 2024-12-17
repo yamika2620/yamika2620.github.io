@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estadística: conceptos y temas importantes en la materia.">
+    <title>Estadística</title>
+    <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('imagenes/fondo.jpeg'); /* Ruta relativa de la imagen */
+            background-size: cover;
+            background-position: center center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #FFB6B9;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #FF6F61;
+            animation: fadeIn 2s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+            animation: pulse 3s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); color: #fff; }
+            100% { transform: scale(1.1); color: #FF6F61; }
+        }
+        .subtitle {
+            position: absolute;
+            font-size: 1.8em;
+            top: 110px;
+            white-space: nowrap;
+            animation: moveSubtitle 8s linear infinite;
+            color: #FF6F61;
+        }
+        @keyframes moveSubtitle {
+            0% { left: -100%; }
+            25% { left: 50%; transform: translateX(-50%); }
+            50% { left: 100%; }
+            75% { left: 50%; transform: translateX(-50%); }
+            100% { left: -100%; }
+        }
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content {
+            flex: 3;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #ffefd5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #ffefd5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #FF6F61;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FFB6B9;
+        }
+        footer {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: 1px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        .information {
+            background-color: #FFF;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centra la imagen */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Consumo que tiene una persona en su arreglo 📊</h1>
+    </header>
+
+    <div class="subtitle">
+        <p>¡Bienvenidos! </p>
+    </div>
+
+    <div class="container">     
+        <div class="content">
+            <section id="tema1">
+                <h2>1. Distribucion de Frecuencia</h2>
+                <p>Es la organización de datos en intervalos de clase, mostrando cuántas veces ocurre cada valor o rango de valores.</p>
+                <button onclick="window.location.href='tema1.html'">Ver más</button>
+            </section>
+
+            <section id="tema2">
+                <h2>2. Representacion de gráficas </h2>
+                <p>Es la visualización de datos en diagramas (como histogramas, diagramas de barras o líneas) para facilitar su interpretación.</p>
+                <button onclick="window.location.href='tema2.html'">Ver más</button>
+            </section>
+
+            <section id="tema3">
+                <h2>3. Medidas de Tendencia Central, Dispersion y Forma </h2>
+                <p>Son estadísticas que describen el valor central o típico de un conjunto de datos, como la media, mediana y moda., La dispersión mide la variabilidad de los datos (como la desviación estándar), mientras que la forma describe cómo se distribuyen los datos (asimetría o curtosis).</p>
+                <button onclick="window.location.href='tema3.html'">Ver más</button>
+            </section>
+
+            <section id="tema4">
+                <h2>4. La distribucion Normal Acumulada</h2>
+                <p>Es una función que muestra la probabilidad acumulada hasta un cierto valor en una distribución normal, representando el área bajo la curva.</p>
+                <button onclick="window.location.href='tema4.html'">Ver más</button>
+            </section>
+
+            <section id="tema5">
+                <h2>5. Distribucion de Muestreo</h2>
+                <p>Es la distribución de una estadística (como la media) basada en múltiples muestras extraídas de una población.</p>
+                <button onclick="window.location.href='tema5.html'">Ver más</button>
+            </section>
+
+            <section id="tema6">
+                <h2>6. Estimacion de Estadística</h2>
+                <p>Es el proceso de utilizar datos muestrales para inferir o estimar parámetros desconocidos de una población.</p>
+                <button onclick="window.location.href='tema6.html'">Ver más</button>
+            </section>
+
+            <section id="tema7">
+                <h2>7.Pruebas de Hipótesis</h2>
+                <p>Son procedimientos estadísticos utilizados para evaluar si una hipótesis sobre una población es consistente con los datos muestrales observados.</p>
+                <button onclick="window.location.href='tema7.html'">Ver más</button>
+            </section>
+        </div>
+
+        <div class="sidebar">
+            <div class="information">
+                <h3>Información Personal</h3>
+                <p><strong>Nombre:</strong> Hernández Peña Karla Yamileth</p>
+                <p><strong>Secuencia:</strong> 4CV42</p>
+                <p><strong>Profesor:</strong> Enrique Aguilar Perez</p>
+                <p><strong>Programa Académico:</strong> Licenciatura en Ciencias de la Informática</p>
+                <img src="imagenes/yo.webp" width="150" height="150">
+                <p><strong>Links de Ayuda:</strong></p>
+                <a href="https://www.upiicsa.ipn.mx/" target="_blank">Ir a pagina de UPIICSA</a>
+                <p><a href="https://www.desof.mx/" target="_blank">DESOF</a></p>
+                <p><a href="https://docs.google.com/document/d/18hMOyDl2PwJpNt4WF-kwDLMOeVua_QE0pbSAz3rXSSU/edit?hl=es&tab=t.0" target="_blank">Lista de Cotejo</a></p>
+                <p><img src="imagenes/estadistica.jpg" width="170" height="170"></p>
+               
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Estadística 2024 | UPIICSA</p>
+    </footer>
+</body>
+</html>

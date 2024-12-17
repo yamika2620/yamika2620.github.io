@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medidas de Tendencia Central.">
+    <title>Medidas de Tendencia Central</title>
+      <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('imagenes/fondo.jpeg');
+            background-size: cover; 
+            background-position: center center;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(255, 182, 185, 0.9);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #FF6F61;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 239, 213, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #FF6F61;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #FF6F61;
+        }
+        th {
+            background-color: #FF6F61;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #FFEBEE;
+        }
+        tr:nth-child(odd) {
+            background-color: #FFF;
+        }
+        tr:hover {
+            background-color: #FFCCCB;
+        }
+        .dropdown-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: 2px solid #FF6F61;
+            background-color: #FFEBEE;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FFB6B9;
+        }
+        footer {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #message {
+            font-size: 1.2em;
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateMessage(option, category) {
+            const messages = {
+                'central': {
+                    '1': 'La Media Aritmética es el promedio de un conjunto de datos.\n Fórmula= ΣXif/n \n Sustitución=5,856/50  = 117.12 = x̄',
+                    '2': 'La Mediana es el valor que divide a los datos en dos mitades iguales.\n Fórmula= L+[(n/2)-fa/f de la media] C \n Sustitución= 116[(50/2)-15/11)7 = 115.35 = Me',
+                    '3': 'La Moda es el valor que más se repite en el conjunto de datos.\n  La fila Li~Ls (109-116), con 11 de frecuencia es la moda, Mo=112.5 '
+                },
+                'dispersion': {
+                    '1': 'El Rango mide la diferencia entre el valor máximo y mínimo.\n R=140-95=45',
+                    '2': 'La Desviación Media es el promedio de las desviaciones absolutas respecto a la media.\n  =Σ[Xi-X̅]/n \n Sustitución=520/50 = 10.4',
+                    '3': 'La Varianza y la Desviación Estándar son medidas que reflejan la dispersión de los datos. \n =Σ[Xi-X̅]^2/n \n Sustitución 11595/50= 231.9=σ^2  \n Desviacion estandar formula= σ=√σ^2 Sustitución= σ=√231.9 = 15.23'
+                },
+               
+            };
+
+            const message = messages[category][option] || '';
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Medidas de Tendencia Central 📊</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <p>Se realizó un estudio para estimar el consumo de una Persona en su Arreglo. El estudio se le hizo a 50 estudiantes de la UPIICSA, a continuación se muestra el importe gastado por cada uno de ellos en pesos:</p>
+            <p>120, 130, 110, 95, 140, 125, 115, 105, 120, 100, 110, 115, 135, 105, 95, 140, 130, 125, 105, 120, 110, 100, 130, 125, 115, 140, 105, 135, 95, 120, 110, 125, 130, 105, 115, 120, 100, 95, 110, 105, 120, 125, 130, 135, 115, 100, 120, 130, 110, 105.</p>
+            <table>
+                <tr>
+                    <th>Clase</th>
+                    <th>Intervalo</th>
+                    <th>Frecuencia (f)</th>
+                    <th>FA</th>
+                    <th>Xi</th>
+                    <th>Xi(f)</th>
+                    <th>[Xi-X̅]</th>
+                    <th>f[Xi-X̅]^2</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>95 ~ 102</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>98.5</td>
+                    <td>788</td>
+                    <td>-27.64</td>
+                    <td>6128.99</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>102 ~ 109</td>
+                    <td>7</td>
+                    <td>15</td>
+                    <td>105.5</td>
+                    <td>738.5</td>
+                    <td>-20.64</td>
+                    <td>3009.60</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>109 ~ 116</td>
+                    <td>11</td>
+                    <td>26</td>
+                    <td>112.5</td>
+                    <td>1237.5</td>
+                    <td>-13.64</td>
+                    <td>2014.51</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>116 ~ 123</td>
+                    <td>7</td>
+                    <td>33</td>
+                    <td>119.5</td>
+                    <td>836.5</td>
+                    <td>-6.64</td>
+                    <td>923.15</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>123 ~ 130</td>
+                    <td>5</td>
+                    <td>38</td>
+                    <td>126.5</td>
+                    <td>632.5</td>
+                    <td>0.36</td>
+                    <td>3.72</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>130 ~ 137</td>
+                    <td>9</td>
+                    <td>47</td>
+                    <td>133.5</td>
+                    <td>1201.5</td>
+                    <td>7.36</td>
+                    <td>484.27</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>137 ~ 144</td>
+                    <td>3</td>
+                    <td>50</td>
+                    <td>140.5</td>
+                    <td>421.5</td>
+                    <td>14.36</td>
+                    <td>619.52</td>
+                </tr>
+            </table>
+
+            <div class="dropdown-container">
+                <select onchange="updateMessage(this.value, 'central')">
+                    <option value="">Medidas de Tendencia Central</option>
+                    <option value="1">Media Aritmética</option>
+                    <option value="2">Mediana</option>
+                    <option value="3">Moda</option>
+                </select>
+
+                <select onchange="updateMessage(this.value, 'dispersion')">
+                    <option value="">Medidas de Dispersión</option>
+                    <option value="1">Rango</option>
+                    <option value="2">Desviación Media</option>
+                    <option value="3">Varianza y Desviación Estándar</option>
+                </select>
+            </div>
+
+            <p id="message"></p>
+            <button onclick="window.location.href='index.html'">Regresar a la Página Principal</button>
+        </section>
+    </div> 
+
+    <footer>
+        <p>Estadística 2024 | UPIICSA</p>
+    </footer>
+</body>
+</html>

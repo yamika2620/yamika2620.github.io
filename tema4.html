@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Distribución Normal Acumulada.">
+    <title>Distribución Normal Acumulada</title>
+      <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('imagenes/fondo.jpeg');
+            background-size: cover; 
+            background-position: center center;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(255, 182, 185, 0.8);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #FF6F61;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 239, 213, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #FF6F61;
+        }
+        p {
+            font-size: 1.2em;
+            white-space: pre-line; /* Conserva saltos de línea */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #FFB6B9;
+        }
+        footer {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: .5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function mostrarTexto(opcion) {
+            const resultado = document.getElementById('resultado');
+            let mensaje = "";
+            
+            if (opcion === 'por_lo_menos_40') {
+                mensaje = `Datos:
+Media (μ): 116.4
+Desviación estándar (σ): 15.23
+Duración mínima: 40 minutos
+
+Fórmula para Z:
+Z = (X - μ) / σ
+
+Sustitución: 
+Z = (40 - 116.4) / 15.23
+Z = -5.01
+
+Conclusión:
+P(X ≥ 40):
+Buscamos la probabilidad acumulada a la derecha de X = 40:
+P(X ≥ 40) = 1 − P(X ≤ 40)
+
+El resultado es aproximadamente:
+P(X ≥ 40) ≈ 1 (100%)
+
+Esto es consistente porque X = 40 está extremadamente lejos hacia la izquierda en comparación con la media.
+Es extremadamente baja en tabla de distribucion, la probabilidad de obtener un valor menor que esto es practicamente 0`;
+            } else if (opcion === 'entre_45_y_60') {
+                mensaje = `Datos:
+Media (μ): 116.4
+Desviación estándar (σ): 15.23
+Duración entre 45 y 60 minutos
+
+Fórmula para Z:
+Z = (X - μ) / σ
+
+Sustitución para X = 45:
+Z = (45 - 116.4) / 15.23
+Z = -4.68
+
+Sustitución para X = 60:
+Z = (60 - 116.4) / 15.23
+Z = -3.70
+
+Conclusión:
+P(45 ≤ X ≤ 60):
+La probabilidad se calcula como:
+P(45 ≤ X ≤ 60) = P(X ≤ 60) − P(X ≤ 45)
+
+El resultado aproximado es:
+P(45 ≤ X ≤ 60) ≈ 0.0001 (0.01%)
+
+Esto refleja que los valores X = 45 y X = 60 están muy alejados de la media μ = 116.4.`;
+            }
+            
+            resultado.textContent = mensaje;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Distribución Normal Acumulada📊</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <p>El tiempo empleado para el arreglo de un alumno de la UPIICSA se distribuye de forma normal, tiene una media de 116.4 y una desviación estándar de 15.23. ¿Cuál es la probabilidad de que el estudiante termine su arreglo en una duración de:</p>
+            <p>a) Por lo menos 40 minutos</p>
+            <p>b) Entre 45 minutos y 60 minutos</p>
+        </section>
+
+        <!-- Botones -->
+        <button onclick="mostrarTexto('por_lo_menos_40')">Por lo menos de 40 minutos</button>
+        <button onclick="mostrarTexto('entre_45_y_60')">Entre 45 y 60 minutos</button>
+        
+        <!-- Resultado -->
+        <section>
+            <h2>Resultado:</h2>
+            <p id="resultado">Selecciona una opción para ver el resultado.</p>
+             <p><img src="imagenes/acumulada.jpg" width="450" height="300"></p>
+        </section>
+
+        <!-- Botón de regresar a la página principal -->
+        <button onclick="window.location.href='index.html'">Regresar a la Página Principal</button>
+    </div>
+
+    <footer>
+        <p>Estadística 2024 | UPIICSA</p>
+    </footer>
+</body>
+</html>

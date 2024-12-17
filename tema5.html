@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Distribucion de Muestreo.">
+    <title>Distribucion de Muestreo</title>
+      <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('imagenes/fondo.jpeg'); /* Ruta relativa de la imagen */
+            background-size: cover; 
+            background-position: center center;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(255, 182, 185, 0.8); /* Color semitransparente para no perder la visibilidad */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #FF6F61;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 239, 213, 0.8); /* Fondo translúcido para leer mejor */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #FF6F61;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FFB6B9;
+        }
+        footer {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: .5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #FF6F61;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #FF6F61;
+            color: white;
+        }
+
+        /* Estilo para las imágenes debajo de las respuestas */
+        .imagen-inciso {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Distribucion de Muestreo 📊</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <p>En una encuesta realizada a los estudiantes de la UPIICSA sobre el tiempo que invierten en su arreglo personal antes de asistir a clases, se encontró que el tiempo promedio es de 25 minutos con una desviación estándar de 5 minutos. Se seleccionó una muestra aleatoria de 40 estudiantes para estimar el tiempo promedio que los estudiantes invierten en su arreglo.</p>
+            
+            <h2>a) ¿Cuál es la probabilidad de que el tiempo promedio de arreglo de la muestra sea menor a 24 minutos?</h2>
+            <p>Para calcular la probabilidad, se utiliza la fórmula de la distribución de muestreo para la media:</p>
+            <pre>
+                Z = (X - μ) / (σ / √n)
+                Z = (24 - 25) / (5 / √40)
+                Z = -1 / (5 / 6.3246)
+                Z = -1 / 0.7906
+                Z = -1.2649
+            </pre>
+            <p>Consultando la tabla de valores Z, encontramos que la probabilidad acumulada para Z = -1.2649 es aproximadamente 0.103. Por lo tanto, la probabilidad de que el tiempo promedio de arreglo de la muestra sea menor a 24 minutos es de:</p>
+            <p><strong>10.3%</strong></p>
+
+            <!-- Imagen debajo de la respuesta del inciso a -->
+            <img src="imagenes/campana1.png" alt="Imagen ilustrativa inciso a" class="imagen-inciso">
+
+            <h2>b) ¿Cuál es la probabilidad de que el tiempo promedio de arreglo de la muestra sea mayor a 26 minutos?</h2>
+            <p>Usamos la misma fórmula para calcular el valor Z para X = 26 minutos:</p>
+            <pre>
+                Z = (26 - 25) / (5 / √40)
+                Z = 1 / (5 / 6.3246)
+                Z = 1 / 0.7906
+                Z = 1.2649
+            </pre>
+            <p>Consultando la tabla de valores Z, encontramos que la probabilidad acumulada para Z = 1.2649 es aproximadamente 0.897. Por lo tanto, la probabilidad de que el tiempo promedio de arreglo de la muestra sea mayor a 26 minutos es de:</p>
+            <p><strong>10.3%</strong></p>
+
+            <!-- Imagen debajo de la respuesta del inciso b -->
+            <img src="imagenes/campana2.png" alt="Imagen ilustrativa inciso b" class="imagen-inciso">
+        </section>
+
+        <!-- Botón de regresar a la página principal -->
+        <button onclick="window.location.href='index.html'">Regresar a la Página Principal</button>
+    </div>
+
+    <footer>
+        <p>Estadística 2024 | UPIICSA</p>
+    </footer>
+</body>
+</html>

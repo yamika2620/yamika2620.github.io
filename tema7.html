@@ -1,0 +1,125 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pruebas de Hipótesis.">
+    <title>Pruebas de Hipótesis</title>
+      <link rel="icon" href="imagenes/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('imagenes/fondo.jpeg'); /* Ruta relativa de la imagen */
+            background-size: cover; 
+            background-position: center center;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(255, 182, 185, 0.8); /* Color semitransparente para no perder la visibilidad */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #FF6F61;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 239, 213, 0.8); /* Fondo translúcido para leer mejor */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #FF6F61;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FFB6B9;
+        }
+        footer {
+            background-color: #FF6F61;
+            color: white;
+            text-align: center;
+            padding: .5px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #FF6F61;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #FF6F61;
+            color: white;
+        }
+         .texto {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pruebas de Hipótesis 📊</h1>
+    </header>
+
+    <div class="container">
+        <section>
+        <p>Se desea determinar si el consumo de tiempo semanal de los estudiantes de la UPIICSA en actividades académicas sigue una distribución normal con una media de 30 horas. A partir de una muestra aleatoria de 100 estudiantes, se obtiene un tiempo promedio de estudio de 28 horas y una desviación estándar de 5 horas.</p>
+<div class="texto">
+      Hipótesis nula (H₀): El consumo promedio de tiempo semanal en actividades académicas de los estudiantes de la UPIICSA es igual a 30 horas.<br>
+      Ho:P=30<br>
+      Hipótesis alternativa (H₁): El consumo promedio de tiempo semanal en actividades académicas de los estudiantes de la UPIICSA es diferente de 30 horas.
+      Hi:P≠30<br>
+      Nivel de significancia (α): 0.05<br>
+      Valor critico= ±1.96 <br>
+      Estadistica  Formula=  Z=(x-μ)/σ/√n  = Z=(28-30)/5√100 = 4<br>
+      Conclusión: 
+       <p><img src="imagenes/campana4.png" width="400" height="200"></p>
+</div>
+    <p>Con base en la prueba de hipótesis, podemos concluir que el consumo promedio de tiempo semanal en actividades académicas de los estudiantes de la UPIICSA es significativamente diferente de 30 horas.</p>
+
+        </section>
+
+        <!-- Botón de regresar a la página principal -->
+        <button onclick="window.location.href='index.html'">Regresar a la Página Principal</button>
+    </div>
+
+    <footer>
+        <p>Estadística 2024 | UPIICSA</p>
+    </footer>
+</body>
+</html>
